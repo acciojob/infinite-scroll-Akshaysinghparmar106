@@ -1,28 +1,27 @@
-//your code here!
+//your code he
 const list = document.getElementById("list");
-let counter = 1;
+let num = 1;
 
-// Function to add items
-function addItems(num) {
-  for (let i = 0; i < num; i++) {
+// Function to add numbers to the list
+function addNumbers(count) {
+  for (let i = 0; i < count; i++) {
     const li = document.createElement("li");
-    li.textContent = "Item " + counter++;
+    li.textContent = num++;
     list.appendChild(li);
   }
 }
 
-// Add first 10 items on load
-addItems(10);
+// Add first 10 numbers on page load
+addNumbers(10);
 
 // Infinite scroll logic
-window.addEventListener("scroll", function () {
-  // When the user reaches the bottom of the page
+window.addEventListener("scroll", () => {
+  // Check if user reached bottom
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    addItems(2); // Add 2 more items
+    addNumbers(2); // Add 2 new numbers
   }
 });
 window.innerHeight + window.scrollY >= document.body.offsetHeight
-
 
 
 
