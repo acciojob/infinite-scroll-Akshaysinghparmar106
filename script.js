@@ -1,28 +1,25 @@
 //your code he
-const list = document.getElementById("list");
-let num = 1;
+const listItem = document.getElementById("infi-list");
 
-// Function to add numbers to the list
-function addNumbers(count) {
-  for (let i = 0; i < count; i++) {
-    const li = document.createElement("li");
-    li.textContent = num++;
-    list.appendChild(li);
-  }
+function addItem(count) {
+    for(let i=0; i<count; i++) {
+        const li = document.createElement("li");
+        li.innerText = `Item ${i+1}`;
+        listItem.append(li);
+    }
 }
 
-// Add first 10 numbers on page load
-addNumbers(10);
+addItem(10);
 
-// Infinite scroll logic
-window.addEventListener("scroll", () => {
-  // Check if user reached bottom
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    addNumbers(2); // Add 2 new numbers
-  }
-});
-window.innerHeight + window.scrollY >= document.body.offsetHeight
+function checkScroll() {
+    // console.dir(listItem);
+    // console.log(listItem.scrollHeight);
+    // console.log(listItem.scrollTop);
+    // console.log(listItem.clientHeight);
+    if(listItem.scrollHeight - listItem.scrollTop - listItem.clientHeight < 1) {
+        addItem(2);
+    }
+}
 
-
-
+listItem.addEventListener("scroll", checkScroll);
 
