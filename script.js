@@ -12,11 +12,11 @@ function addItem(count) {
 addItem(10);
 
 function checkScroll() {
-     console.dir(listItem);
-     console.log(listItem.scrollHeight);
-     console.log(listItem.scrollTop);
-     console.log(listItem.clientHeight);
-    if(listItem.scrollHeight - listItem.scrollTop - listItem.clientHeight < 1) {
+    //  console.dir(listItem);
+    //  console.log(listItem.scrollHeight);
+    //  console.log(listItem.scrollTop);
+    //  console.log(listItem.clientHeight);
+     if(listItem.scrollHeight - listItem.scrollTop - listItem.clientHeight < 1) {
         addItem(2);
     }
 }
