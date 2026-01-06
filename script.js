@@ -17,9 +17,8 @@ function checkScroll() {
     // console.log(listItem.scrollTop);
     // console.log(listItem.clientHeight);
     if(listItem.scrollHeight - listItem.scrollTop - listItem.clientHeight < 1) {
-        addItem(18);
+        addItem(2);
     }
 }
 
 listItem.addEventListener("scroll", checkScroll);
-
